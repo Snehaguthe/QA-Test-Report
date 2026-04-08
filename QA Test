@@ -1,0 +1,86 @@
+# QA Test Report
+
+## 📌 Project Details
+- **Project Name:** Darkeye Application  
+- **Module:** Login Functionality  
+- **Tester:** Sneha Guthe  
+- **Test Date:** 08-Apr-2026  
+- **Environment:** QA  
+
+---
+
+## 📊 Test Summary
+
+| Total Test Cases | Passed | Failed | Blocked |
+|----------------|--------|--------|--------|
+| 10             | 8      | 2      | 0      |
+
+---
+
+## 🧪 Test Scenarios & Results
+
+### ✅ TC-01: Valid Login
+- **Input:** Correct username & password  
+- **Expected Result:** User logs in successfully  
+- **Actual Result:** Login successful  
+- **Status:** Passed  
+
+---
+
+### ✅ TC-02: Invalid Password
+- **Input:** Correct username, wrong password  
+- **Expected Result:** Error message displayed  
+- **Actual Result:** Error shown  
+- **Status:** Passed  
+
+---
+
+### ✅ TC-03: Empty Fields
+- **Input:** Blank username & password  
+- **Expected Result:** Validation message  
+- **Actual Result:** Validation displayed  
+- **Status:** Passed  
+
+---
+
+### ✅ TC-04: SQL Injection Attempt
+- **Input:** `' OR '1'='1`  
+- **Expected Result:** Login should fail  
+- **Actual Result:** Access denied  
+- **Status:** Passed  
+
+---
+
+### ❌ TC-05: OTP Expiry Validation
+- **Input:** Expired OTP  
+- **Expected Result:** OTP should be rejected  
+- **Actual Result:** OTP accepted  
+- **Status:** Failed  
+
+---
+
+## 🐞 Defects / Bugs
+
+| Bug ID | Description | Severity | Priority | Status |
+|--------|------------|----------|----------|--------|
+| BUG-01 | OTP accepts expired value | High | High | Open |
+| BUG-02 | UI misalignment on login page | Medium | Medium | Open |
+
+---
+
+## ⚠️ Observations
+- OTP validation logic needs improvement  
+- UI alignment issue on smaller screens  
+
+---
+
+## ✅ Conclusion
+The login functionality is mostly working as expected.  
+However, **critical issue found in OTP validation** needs immediate attention before release.
+
+---
+
+## 📎 Recommendations
+- Fix OTP expiry validation logic  
+- Perform regression testing after bug fixes  
+- Add negative test scenarios for security validation  
